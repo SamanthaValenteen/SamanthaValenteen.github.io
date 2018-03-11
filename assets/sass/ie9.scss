@@ -1,17 +1,25 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
-@import 'libs/skel';
 
 /*
-	Phantom by HTML5 UP
+	Big Picture by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Tiles */
+/* Loader */
 
-	.tiles {
+	body {
+		&:before,
+		&:after {
+			display: none !important;
+		}
+	}
+
+/* Gallery */
+
+	.gallery {
 		&:after {
 			content: '';
 			display: block;
@@ -20,33 +28,27 @@
 
 		article {
 			float: left;
+		}
+	}
 
-			> a {
-				padding-top: 50%;
-				margin-top: -1.75em;
-			}
+/* Main */
 
-			body:not(.is-touch) & {
-				&:hover {
-					> .image {
-						@include vendor('transform', 'none');
-					}
-				}
+	.main {
+		&.fullscreen {
+			min-height: 0;
+		}
+
+		&.style1 {
+			> .content {
+				margin: 0 auto;
 			}
 		}
 	}
 
-/* Footer */
+/* Poptrox */
 
-	#footer {
-		> .inner {
-			section {
-				float: left;
-			}
-
-			.copyright {
-				clear: both;
-				padding-top: (_size(element-margin) * 2);
-			}
+	.poptrox-popup {
+		.loader {
+			display: none !important;
 		}
 	}
